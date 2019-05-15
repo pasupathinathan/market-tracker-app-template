@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="header">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>{{"HOLIDAYS"|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<br/>
+<p align="center">
+  <b>MS-(10:00 AM to 05:00 PM)</b><br/>
+  <b>ES-(05:00 PM to 11:55 PM)</b></p>
+  <table border="1" cellpadding="10" cellspacing="10" style="margin-left: 10px;margin-right: 10px;margin-top: 10px;margin-bottom: 60px">
+    <th style="background-color:#fdd14b"><h6>Date</h6></th>
+    <th style="background-color:#fdd14b"><h6>Particulars</h6></th>
+    <th style="background-color:#fdd14b"><h6>MS</h6></th>
+    <th style="background-color:#fdd14b"><h6>ES</h6></th>
+    <tr *ngFor="let item of items">
+    <td class="col">{{ item.Date}} <br/> {{ item.Days }}</td>
+    <td class="col" style="width:20px">{{ item.Particulars}}</td>
+    <td class="col" [innerHtml]="item.Ms"></td>
+    <td class="col" [innerHtml]="item.Es"></td></tr>
+  </table>
+  <ion-fab right bottom>
+      <button ion-fab color="header"><ion-icon name="share"></ion-icon></button>
+      <ion-fab-list side="left">
+        <button ion-fab (click)="shareFB()"><ion-icon color="primary" name="logo-facebook"></ion-icon></button>
+        <button ion-fab (click)="sharewap()"><ion-icon color="secondary" name="logo-whatsapp"></ion-icon></button>
+        <button ion-fab (click)="sharetwit()"><ion-icon color="primary" name="logo-twitter"></ion-icon></button>
+        <button ion-fab (click)="moreshare()"><ion-icon color="primary" name="share"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>      
+</ion-content>

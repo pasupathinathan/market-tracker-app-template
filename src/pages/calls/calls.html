@@ -1,0 +1,17 @@
+
+  
+  <ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="Pull to refresh"
+        refreshingSpinner="ios-small"
+        refreshingText="loading...">
+      </ion-refresher-content>
+    </ion-refresher>
+    
+      <div class="item item-text-wrap" *ngFor="let item of items" >
+        <div><p>{{ item.created_on }}<br><font color="{{ item.color }}">{{ item.content }}</font></p><hr/></div>
+      </div>
+  </ion-content>
+  

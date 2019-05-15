@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="header">
+      <button ion-button menuToggle left>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>{{"RATE ME"|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+    <div class="login-box">
+    <ion-row>
+          <ion-col>
+            <ion-list inset>
+                  <ion-icon name="star" class="ico"></ion-icon>
+                  <ion-icon name="star" class="ico"></ion-icon>
+                  <ion-icon name="star" class="ico"></ion-icon>
+                  <ion-icon name="star" class="ico"></ion-icon>
+                  <ion-icon name="star-outline" class="ico"></ion-icon>
+             </ion-list>
+        </ion-col>
+       </ion-row>
+       <ion-row>
+          <ion-col class="signup-col">
+              <button ion-button color="header" block onclick="window.open('https://play.google.com/store/apps/details?id=com.fastura.mcx', '_self', 'location=no', 'toolbar=no')">Rate Me</button>
+          </ion-col>
+      </ion-row>
+    </div>
+    <ion-fab right bottom>
+            <button ion-fab color="header"><ion-icon name="share"></ion-icon></button>
+            <ion-fab-list side="left">
+              <button ion-fab (click)="shareFB()"><ion-icon color="primary" name="logo-facebook"></ion-icon></button>
+              <button ion-fab (click)="sharewap()"><ion-icon color="secondary" name="logo-whatsapp"></ion-icon></button>
+              <button ion-fab (click)="sharetwit()"><ion-icon color="primary" name="logo-twitter"></ion-icon></button>
+              <button ion-fab (click)="moreshare()"><ion-icon color="primary" name="share"></ion-icon></button>
+            </ion-fab-list>
+          </ion-fab>
+</ion-content>

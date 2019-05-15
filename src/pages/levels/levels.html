@@ -1,0 +1,17 @@
+  <ion-content padding-top>
+    <table border="1" cellpadding="10" cellspacing="10" style="margin-left: 5px;margin-right: 5px;margin-bottom:60px">
+      <tr>
+        <th>Script<br/>Time</th>
+        <th>R1<br/>S1</th>
+        <th>R2<br/>S2</th>
+        <th>R3<br/>S3</th>
+      </tr>
+      <tr *ngFor="let item of items">
+        <td class="col">{{ item.SN}} <br/> {{ item.TV }}</td>
+        <td class="col"><font color="green">{{ item.R1}}</font> <br/> <font color="red">{{ item.S1 }}</font></td>
+        <td class="col"><font color="green">{{ item.R2}}</font> <br/> <font color="red">{{ item.S2 }}</font></td>
+        <td class="col"><font color="green">{{ item.R3}}</font> <br/> <font color="red">{{ item.S3 }}</font></td>
+      </tr>
+    </table>
+  </ion-content>
+  

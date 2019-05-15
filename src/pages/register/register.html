@@ -1,0 +1,84 @@
+<ion-content class="login-content" padding>
+  <ion-row calss="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="assets/imgs/mcx logo.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  
+  <div class="login-box">
+      <form novalidate (ngSubmit)="Submit()" [formGroup]="details">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+          	<ion-item>
+              <ion-label><ion-icon name="person" color="iconcolor"></ion-icon></ion-label>
+              <ion-input type="text" [(ngModel)]="userData.username" formControlName="username" placeholder="User Name" [class.error1]="!details.controls.username.valid && details.controls.username.dirty"></ion-input>
+            </ion-item>
+            <ion-item no-lines *ngIf="( details.get('username').hasError('pattern') ||details.get('username').hasError('required') ) && details.get('username').touched">
+                <div class="error" *ngIf="details.get('username').hasError('required') && details.get('username').touched">
+                  Please input your username
+                </div>
+                <div class="error" *ngIf="details.get('username').hasError('pattern') && details.get('username').touched">
+                  Just use alphabet character
+                </div>
+           </ion-item>  
+
+            <ion-item>
+              <ion-label><ion-icon name="mail" color="iconcolor"></ion-icon></ion-label>
+              <ion-input type="text" [(ngModel)]="userData.email" formControlName="email" placeholder="Mail@example.com" [class.error1]="!details.controls.email.valid && details.controls.email.dirty"></ion-input>
+            </ion-item>
+            <ion-item no-lines *ngIf="( details.get('email').hasError('pattern') ||details.get('email').hasError('required') ) && details.get('email').touched">
+              <div class="error" *ngIf="details.get('email').hasError('required') && details.get('email').touched">
+                Please input your email
+              </div>
+              <div class="error" *ngIf="details.get('email').hasError('pattern') && details.get('email').touched">
+                Email address invalid
+              </div>
+            </ion-item>  
+            
+            <ion-item>
+              <ion-label><ion-icon name="call" color="iconcolor"></ion-icon></ion-label>
+              <ion-input type="tel" [(ngModel)]="userData.phone" formControlName="phone" placeholder="Phone Number" [class.error1]="!details.controls.phone.valid && details.controls.phone.dirty"></ion-input>
+            </ion-item>
+            <ion-item no-lines *ngIf="( details.get('phone').hasError('pattern') ||details.get('phone').hasError('required') ) && details.get('phone').touched">
+              <div class="error" *ngIf="details.get('phone').hasError('required') && details.get('phone').touched">
+                Please input your phone number
+              </div>
+              <div class="error" *ngIf="details.get('phone').hasError('pattern') && details.get('phone').touched">
+                Phone number invalid
+              </div>
+            </ion-item>  
+
+            <ion-item>
+                <ion-label><ion-icon name="barcode" color="iconcolor"></ion-icon></ion-label>
+                <ion-input type="text" [(ngModel)]="userData.code" formControlName="code" placeholder="ReferralCode"></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row class="term">
+        <ion-checkbox checked="true"></ion-checkbox><a href="http://mcx.fastura.net/mcx/term.html">Terms & Conditions</a>
+      </ion-row>
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button round type="submit" color="btn" [disabled]="details.invalid">Register&nbsp;<ion-icon name="log-out"></ion-icon></button>
+        </ion-col>
+      </ion-row>  
+    </form>
+  </div>
+</ion-content>
+<style type="text/css">
+  .error {
+    color: rgb(223, 62, 62);
+    font-size: 11px;
+  }
+
+  .error1 {
+    color: rgb(75, 75, 75);
+    border-bottom: 1px solid #ff0000;
+  }
+</style>

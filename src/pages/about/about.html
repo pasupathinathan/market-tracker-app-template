@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="header">
+      <button ion-button menuToggle left>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>{{"ABOUT US"|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card padding>
+      <div class="row" *ngFor="let item of items">
+          <div [innerHtml]="item.aboutcompany"></div>
+        </div>
+      </ion-card>
+      <ion-fab right bottom>
+          <button ion-fab color="header"><ion-icon name="share"></ion-icon></button>
+          <ion-fab-list side="left">
+            <button ion-fab (click)="shareFB()"><ion-icon color="primary" name="logo-facebook"></ion-icon></button>
+            <button ion-fab (click)="sharewap()"><ion-icon color="secondary" name="logo-whatsapp"></ion-icon></button>
+            <button ion-fab (click)="sharetwit()"><ion-icon color="primary" name="logo-twitter"></ion-icon></button>
+            <button ion-fab (click)="moreshare()"><ion-icon color="primary" name="share"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+</ion-content>

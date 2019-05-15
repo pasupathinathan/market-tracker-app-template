@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="header">
+      <button ion-button menuToggle left>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>{{"ACCOUNT"|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-list style="margin-top: 100px" class="row" *ngFor="let item of items">
+    <ion-item >
+      <ion-icon name="person" color="iconcolor" style="font-size: 20px" item-start></ion-icon><h3>{{ item.UserName}}</h3>
+    </ion-item>
+    <ion-item item-center>
+      <ion-icon name="mail" style="font-size: 20px" color="iconcolor" item-start></ion-icon><h3>{{ item.UserEmail}}</h3>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="call" color="iconcolor" style="font-size: 20px" item-start></ion-icon><h3>{{ item.UserMobileNo}}</h3>
+    </ion-item>
+    <div><h5 style="text-align: center; color: red">&nbsp;&nbsp;&nbsp;&nbsp;Expire Date : {{ item.AppExipiredDate }}</h5></div>
+  </ion-list>
+  <ion-row calss="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-55>
+<button ion-button (click)="TabsPage()" color="header">Exit</button>
+</ion-col>
+<ion-col></ion-col>
+</ion-row>
+
+<ion-fab right bottom>
+    <button ion-fab color="header"><ion-icon name="share"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="shareFB()"><ion-icon color="primary" name="logo-facebook"></ion-icon></button>
+      <button ion-fab (click)="sharewap()"><ion-icon color="secondary" name="logo-whatsapp"></ion-icon></button>
+      <button ion-fab (click)="sharetwit()"><ion-icon color="primary" name="logo-twitter"></ion-icon></button>
+      <button ion-fab (click)="moreshare()"><ion-icon color="primary" name="share"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

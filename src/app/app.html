@@ -1,0 +1,31 @@
+<ion-menu [content]="content">
+  <ion-header>
+      <ion-toolbar color="header">
+          <ion-title color="light" text-center>MCX Market Tracker</ion-title>
+         <ion-avatar>
+            <div class="circle-pic">
+              <img class="image" src="assets/imgs/mcx logo.png">
+          </div>
+        </ion-avatar>
+        </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <h2 *ngIf="p.title == 'HOME'"><ion-icon name="home" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+        <h2 *ngIf="p.title == 'ACCOUNT'"><ion-icon name="person" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+        <h2 *ngIf="p.title == 'HOLIDAYS'"><ion-icon name="bookmarks" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+        <h2 *ngIf="p.title == 'FAQ'"><ion-icon name="clipboard" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+        <h2 *ngIf="p.title == 'RATE ME'"><ion-icon name="star-half" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+        <h2 *ngIf="p.title == 'HELP'"><ion-icon name="chatbubbles" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+        <h2 *ngIf="p.title == 'ABOUT US'"><ion-icon name="alert" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+        <h2 *ngIf="p.title == 'LANGUAGE'"><ion-icon name="alert" color="iconcolor"></ion-icon> {{p.title | translate}}</h2>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

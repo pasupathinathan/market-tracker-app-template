@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="header">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Subscribe</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div padding>
+      <br/><br/>
+      <b>Thank you so much.</b>Your subscription has been expired.Please make the payment to our Bank Account and inform us.<br/>
+      <p style="font-size:14px;"><b>Fastura technologies pvt ltd<br/>ICICI bank A/C NO:000205501011<br/>IFSC Code:ICIC0000002<br/></b></p>
+      For any queries,<br/>&nbsp;&nbsp;&nbsp;&nbsp;please Contact us at<a href="tel:8903330035"> 8903330035</a> /<a href="tel:9036782332"> 9036782332</a> or mail to <a href="mailto:supportteam@fastura.com">supportteam@fastura.com</a><h1 align="center">Rs.2500</h1><br/>
+      For online payment, click Subscribe button<br/>
+      <button ion-button color="header" full  (click)="d()">Subscribe Now</button>
+      <p *ngIf="items == 'disable'">
+        <button ion-button color="header" full  disabled>Free trail request</button>
+      </p>
+      <p *ngIf="items == 'enable'">
+        <button ion-button color="header" full >Free trail request</button>
+      </p>
+    </div>
+</ion-content>

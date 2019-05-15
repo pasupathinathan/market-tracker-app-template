@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{"LANGUAGE"|translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+  <ion-list>
+    <ion-item>
+    <ion-label> Select Your Language</ion-label>
+    <ion-select [(ngModel)]="lang" (ionChange)="changelang()">
+    <ion-option value="en">English</ion-option>
+    <ion-option value="ta">Tamizh (தமிழ்)</ion-option>
+    <ion-option value="hi">Hindi </ion-option>
+    </ion-select>
+    </ion-item>
+    </ion-list>
+</ion-content>
